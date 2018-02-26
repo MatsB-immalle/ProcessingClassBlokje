@@ -19,23 +19,32 @@ void draw()
 
 
 class blokje{
-  float Xcoord, Ycoord;
-  blokje(float x,float y){
-  Xcoord = x;
-  Ycoord = y; 
   
-  
-   
+    float Xcoord, Ycoord, breedte, hoogte;
+    blokje(float x,float y){
+    Xcoord = x;
+    Ycoord = y; 
+    breedte = 20;
+    hoogte = 20;
   }
   
  
   void show(){
     
-    rect(Xcoord,Ycoord,30 ,30);
-      if(mousePressed)
+    rect(Xcoord,Ycoord,breedte ,hoogte);
+    
+    
+    
+       if(mousePressed && (mouseButton == LEFT))
     {
     Xcoord +=1;
     Ycoord +=1;
+    }
+   if(mousePressed && (mouseButton == RIGHT))
+    {
+      breedte += 1;
+      hoogte += 1;
+    
     }
     
   }

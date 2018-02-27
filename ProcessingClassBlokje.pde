@@ -11,11 +11,13 @@ void setup()
 void draw() 
 {
   background(200);
-  blok1.show();
-  blok2.show();
+  blok1.update();
+  blok2.update();
   
   
 }
+
+
 
 
 class blokje{
@@ -26,26 +28,35 @@ class blokje{
     Ycoord = y; 
     breedte = 20;
     hoogte = 20;
+
   }
   
  
-  void show(){
+  void update(){
     
     rect(Xcoord,Ycoord,breedte ,hoogte);
-    
-    
-    
+       
        if(mousePressed && (mouseButton == LEFT))
     {
     Xcoord +=1;
     Ycoord +=1;
+    
+
     }
+    
    if(mousePressed && (mouseButton == RIGHT))
     {
       breedte += 1;
-      hoogte += 1;
-    
+      hoogte += 1;   
     }
+    
+    if(keyPressed && (keyCode == UP))
+   {
+     println("up");
+      Ycoord -=1;
+     
+   }
+  
     
   }
  

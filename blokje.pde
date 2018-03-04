@@ -6,6 +6,8 @@ class Blokje {
   int x;
   int y;
   
+  
+  
   int xRichting = 1;
   int yRichting = 1;
   
@@ -15,9 +17,14 @@ class Blokje {
     originalWidth = w;
     originalHeight = h;
     this.x = x;
-    this.y = y;
+    this.y = y;   
+    
   }
   
+  void change(){
+  
+  }
+
   void update() {
     x += xRichting;
     y += yRichting;
@@ -25,6 +32,7 @@ class Blokje {
   
   void draw() {
     rect(x, y, w, h);
+    
   }
   
   void grow() {

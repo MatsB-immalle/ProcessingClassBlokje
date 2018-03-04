@@ -3,12 +3,27 @@ Blokje b2 = new Blokje(10, 20, 200, 10);
 
 void setup() {
  size(400,400); 
+ fill(0,0,0);
 }
+
+void mouseWheel(MouseEvent event) {
+  float e = event.getCount();
+  if(e == 1){
+         fill(255,0,0);
+  }else if(e == -1){
+         fill(0,0,255);
+  }
+}
+
+
 
 void draw() {
   background(120);
+  
   b1.draw();
   b2.draw();
+ 
+
   if(mousePressed && mouseButton == LEFT) {
     b1.update();
     b2.update();
